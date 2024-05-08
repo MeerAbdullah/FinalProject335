@@ -1,0 +1,68 @@
+<!-- AUTHORS: Meer Abdullah, Sid Mittal, Schuaib Syed -->
+<!doctype html>
+<html lang="en">
+<!-- header -->
+<head>
+    <meta charset="utf-8">
+    <title>Weather Results for <%= city %></title>
+    <style>
+        /* for body of html */
+        body {
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.35rem;
+        }
+        button:hover {
+            background-color: rgb(50, 50, 50);
+            transition: background-color 0.3s ease;
+        }
+
+        /* styling a href links */
+        a {
+            display: block;
+            color: #000;
+            margin-top: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Weather Details -->
+    <h1>Weather Details for <%= city %></h1>
+    <% if (weatherData) { %>
+        <div>
+            <!-- All the weather details we are showing -->
+            <p><strong>Temperature:</strong> <%= weatherData.main.temp %>°F (Feels like: <%= weatherData.main.feels_like %>°F)</p>
+            <p><strong>Minimum Temperature:</strong> <%= weatherData.main.temp_min %>°F</p>
+            <p><strong>Maximum Temperature:</strong> <%= weatherData.main.temp_max %>°F</p>
+            <p><strong>Pressure:</strong> <%= weatherData.main.pressure %> hPa</p>
+            <p><strong>Humidity:</strong> <%= weatherData.main.humidity %>%</p>
+            <p><strong>Wind Speed:</strong> <%= weatherData.wind.speed %> mph, Direction: <%= weatherData.wind.deg %> degrees</p>
+            <p><strong>Cloudiness:</strong> <%= weatherData.clouds.all %>% coverage</p>
+            <p><strong>Visibility:</strong> <%= weatherData.visibility %> meters</p>
+            <p><strong>Sunrise:</strong> <%= new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString() %></p>
+            <p><strong>Sunset:</strong> <%= new Date(weatherData.sys.sunset * 1000).toLocaleTimeString() %></p>
+            <p><strong>Conditions:</strong> <%= weatherData.weather[0].description %></p>
+            <img src="http://openweathermap.org/img/w/<%= weatherData.weather[0].icon %>.png" alt="Weather icon">
+        </div>
+        <!-- Form to save some location -->
+        <form action="/saveLocationForm" method="get">
+            <button type="submit">Click here to save location</button>
+        </form> 
+    <!-- if not valid, display that theres no weather data available -->       
+    <% } else { %>
+        <p>No weather data available.</p>
+    <% } %>
+    <!-- option to check for other locations -->
+    <a href="/">Check another location</a>
+</body>
+</html>

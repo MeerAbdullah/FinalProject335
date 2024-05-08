@@ -1,0 +1,43 @@
+<!-- AUTHORS: Meer Abdullah, Sid Mittal, Schuaib Syed -->
+<!doctype html>
+<html lang="en">
+<!-- header -->
+<head>
+    <meta charset="utf-8">
+    <title>Weather Check</title>
+    <style>
+        /* for body of html */
+        body {
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.35rem;
+        }
+        button:hover {
+            background-color: rgb(50, 50, 50);
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form to get the weather for a certain city -->
+    <h1>Check Weather</h1>
+    <form action="/getWeather" method="get">
+        Enter Location: <input type="text" id="city" name="city" style="padding: 8px;margin-top: 5px;">
+        <button type="submit">Get Weather</button>
+    </form>
+    <!-- Form to search saved weather -->
+    <form action="/searchSavedWeather" method="get">
+        <button type="submit">Search for Saved Weather</button>
+    </form>
+</body>
+</html>

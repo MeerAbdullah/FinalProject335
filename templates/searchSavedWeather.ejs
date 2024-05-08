@@ -1,0 +1,49 @@
+<!-- AUTHORS: Meer Abdullah, Sid Mittal, Schuaib Syed -->
+<!doctype html>
+<html lang="en">
+<!-- header -->
+<head>
+    <meta charset="utf-8">
+    <title>Search Saved Weather</title>
+    <style>
+        /* for body of html */
+        body {
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.35rem;
+        }
+        button:hover {
+            background-color: rgb(50, 50, 50);
+            transition: background-color 0.3s ease;
+        }
+
+        /* styling a href links */
+        a {
+            display: block;
+            color: #000;
+            margin-top: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- form to search for weather data -->
+    <h1>Search Your Saved Weather Data</h1>
+    <form action="/retrieveSavedWeather" method="post">
+        Name: <input type="text" id="name" name="name" required style="padding: 8px;margin-top: 5px;" placeholder="Case Sensitive Name"><br>
+        Password: <input type="password" id="password" name="password" required style="padding: 8px;margin-top: 5px;" placeholder="Case Sensitive Password"><br>
+        <button type="submit">Search</button>
+    </form>
+    <!-- form to return home -->
+    <a href="/">Return to Home</a>
+</body>
+</html>
