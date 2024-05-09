@@ -66,6 +66,14 @@ app.get('/getWeather', (req, res) => {
     (async function() {
         try {
             const resp = await axios.get(url);
+
+            function formatDate(timestamp) {
+                const moment = require('moment-timezone');
+                return moment.unix(timestamp).tz('America/New_York').format('h:mm:ss A');
+            }
+            resp.data.sys.sunrise = formatDate(resp.data.sys.sunrise);
+            resp.data.sys.sunset = formatDate(resp.data.sys.sunset);
+
             res.render("weather", {city: city, weatherData: resp.data}); 
         } catch (error) {
             //console.error('Error fetching weather data:', error);
