@@ -10,12 +10,9 @@ app.set("view engine", "ejs");
 require("dotenv").config({ path: path.resolve(__dirname, '.env') }) 
 
 //all database related info
-let user = process.env.MONGO_DB_USERNAME;
-let password = process.env.MONGO_DB_PASSWORD;
 let db_info = {db: "WeatherDB", collection:"savedLocations"};
 let { MongoClient, ServerApiVersion } = require('mongodb');
-let uri = `mongodb+srv://${user}:${password}@mabdul03.qijkuh2.mongodb.net/?retryWrites=true&w=majority`;
-// 'mongodb+srv://meerabdullah:u37dg92WpkbE9byd@mabdul03.qijkuh2.mongodb.net/?retryWrites=true&w=majority&appName=mabdul03'
+let uri = process.env.URL;
 let client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 // if argument isnt 3, break.
