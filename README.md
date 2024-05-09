@@ -11,10 +11,10 @@ Allow users to find the weather and forecast of a location given the city, and t
 with a username and password to MongoDB to look at the location later.
 
 ### YouTube Video Demo Link:
-[YouTube Video Demo](https://www.youtube.com/MyAmazingAPP)
+https://www.youtube.com/watch?v=fsP8gfURIRc
 
 ### APIs Information:
-[Weather API](https://openweathermap.org/current)
+Weather API: (https://openweathermap.org/current)
 
 ### Contact Email for Questions:
 mabdul03@terpmail.umd.edu
