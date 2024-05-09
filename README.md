@@ -18,3 +18,6 @@ Weather API: (https://openweathermap.org/current)
 
 ### Contact Email for Questions:
 mabdul03@terpmail.umd.edu
+
+### Note on running application:
+Simply run 'node forecast.js <some_port>
