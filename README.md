@@ -16,5 +16,5 @@ with a username and password to MongoDB to look at the location later.
 ### APIs Information:
 [Weather API](https://openweathermap.org/current)
 
-### Contact Email:
+### Contact Email for Questions:
 mabdul03@terpmail.umd.edu

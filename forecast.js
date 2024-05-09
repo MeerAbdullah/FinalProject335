@@ -123,12 +123,12 @@ app.post('/retrieveSavedWeather', (req, res) => {
                 let output = `<h1>Saved Weather Data</h1><p><b>Name:</b> ${user.name}</p>`;
                 output += `<p><b>City:</b> ${user.city}</p><hr><a href="/">Home</a>`;
                 res.send(output);
+            } else {
+                let output = `<h1>No Data Found</h1><p>Incorrect name or password.</p><hr>`;
+                output += `<a href="/searchSavedWeather">Try Again</a>`;
+                output += `<br><a href="/">Home</a>`;
+                res.send(output);
             }
-
-            let output = `<h1>No Data Found</h1><p>Incorrect name or password.</p><hr>`;
-            output += `<a href="/searchSavedWeather">Try Again</a>`;
-            output += `<br><a href="/">Home</a>`;
-            res.send(output);
         } catch (error) {
             //console.error("Error retrieving saved data:", error);
             res.status(500).send("Failed to retrieve saved data");
