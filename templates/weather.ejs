@@ -49,8 +49,8 @@
             <p><strong>Wind Speed:</strong> <%= weatherData.wind.speed %> mph, Direction: <%= weatherData.wind.deg %> degrees</p>
             <p><strong>Cloudiness:</strong> <%= weatherData.clouds.all %>% coverage</p>
             <p><strong>Visibility:</strong> <%= weatherData.visibility %> meters</p>
-            <p><strong>Sunrise:</strong> <%= weatherData.sys.sunrise %></p>
-            <p><strong>Sunset:</strong> <%= weatherData.sys.sunset %></p>
+            <p><strong>Sunrise (EST):</strong> <%= weatherData.sys.sunrise %></p>
+            <p><strong>Sunset (EST):</strong> <%= weatherData.sys.sunset %></p>
             <p><strong>Conditions:</strong> <%= weatherData.weather[0].description %></p>
             <img src="http://openweathermap.org/img/w/<%= weatherData.weather[0].icon %>.png" alt="Weather icon">
         </div>
